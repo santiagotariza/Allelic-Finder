@@ -1,0 +1,288 @@
+Analysis Software: CopyCaller v2.0
+
+
+File name: 230807_CNV_S_Results.txt
+Target name: Hs04083572_cn
+Reference name: RNASA P
+
+File Header:
+* Block Type = 384-Well Block
+* Calibration Background is expired  = No
+* Calibration Background performed on = 06-21-2023
+* Calibration Pure Dye FAM is expired = No
+* Calibration Pure Dye FAM performed on = 06-21-2023
+* Calibration Pure Dye ROX is expired = No
+* Calibration Pure Dye ROX performed on = 06-21-2023
+* Calibration Pure Dye SYBR is expired = No
+* Calibration Pure Dye SYBR performed on = 06-21-2023
+* Calibration Pure Dye TAMRA is expired = No
+* Calibration Pure Dye TAMRA performed on = 06-21-2023
+* Calibration Pure Dye VIC is expired = No
+* Calibration Pure Dye VIC performed on = 06-21-2023
+* Calibration ROI is expired  = No
+* Calibration ROI performed on = 06-21-2023
+* Calibration Uniformity is expired  = No
+* Calibration Uniformity performed on = 06-21-2023
+* Chemistry = TAQMAN
+* Date Created = 2023-08-08 09:42:18 AM CEST
+* Experiment Barcode = NA
+* Experiment Comment = NA
+* Experiment File Name = D:\CNVs SUICIDIO\230807_CNV_S_v2.eds
+* Experiment Name = 230807_CNV_S
+* Experiment Run End Time = 2023-08-07 23:54:22 PM CEST
+* Experiment Type = Comparative Cт (ΔΔCт) 
+* Instrument Name =       272533331
+* Instrument Serial Number = 272533331
+* Instrument Type = QuantStudio™ 5 System
+* Passive Reference = ROX
+* Post-read Stage/Step = 
+* Pre-read Stage/Step = 
+* Quantification Cycle Method = Ct
+* Signal Smoothing On = true
+* Stage/ Cycle where Ct Analysis is performed = Stage2, Step2
+* User Name = NA
+
+Analysis Parameters:
+VIC Ct detection threshold: 32.0
+Calibrator sample copy number: 2
+
+Total number of samples: 32
+- Negative control: 1
+- Undetermined: 1
+- 1 Copy: 2
+- 2 Copies: 26
+- 3 Copies: 2
+
+Total number of wells omitted from analysis: 6
+- VIC Ct exceeded the specified detection threshold (32.0): 4
+- Outlier determined by the software: 1
+- Negative control sample well: 1
+
+Delta Ct variance: 0.0984
+
+Sample Name,Target,Reference,Plate ID,CN Calculated,CN Predicted,Confidence,|Z-Score|,Replicate Count,Replicates Analyzed,FAM Ct Mean,VIC Ct Mean,Delta Ct Mean,Delta Ct SD,Delta Delta Ct,RQ,Min CN,Max CN,CN Range,Sample Comments
+110_14,Hs04083572_cn,RNASA P,,2.01,2,> 0.99,0.04,4,4,25.9025,26.1128,-0.2102,0.08,-0.01,1.01,1.92,2.15,0.23, 
+1116_15,Hs04083572_cn,RNASA P,,2.07,2,> 0.99,0.13,4,4,26.3325,26.5823,-0.2497,0.11,-0.05,1.03,1.86,2.22,0.36, 
+112_18,Hs04083572_cn,RNASA P,,2.09,2,> 0.99,0.19,4,4,27.3558,27.6178,-0.2620,0.11,-0.06,1.04,1.90,2.29,0.39, 
+115_22,Hs04083572_cn,RNASA P,,2.06,2,> 0.99,0.06,4,4,25.7465,25.9900,-0.2435,0.15,-0.04,1.03,1.84,2.27,0.43, 
+1166_14,Hs04083572_cn,RNASA P,,2.00,2,> 0.99,0.05,4,4,26.4808,26.6843,-0.2035,0.07,-0.00,1.00,1.92,2.14,0.22, 
+11_14,Hs04083572_cn,RNASA P,,2.22,2,0.99,1.02,4,4,26.0303,26.3808,-0.3505,0.11,-0.15,1.11,2.01,2.38,0.38, 
+129_19,Hs04083572_cn,RNASA P,,1.97,2,> 0.99,0.03,4,3,26.2243,26.4033,-0.1790,0.03,0.02,0.98,1.94,2.01,0.07, 
+134_21,Hs04083572_cn,RNASA P,,1.01,1,> 0.99,0.06,4,4,27.3290,26.5470,0.7820,0.08,0.98,0.51,0.95,1.08,0.13, 
+137_22,Hs04083572_cn,RNASA P,,2.00,2,> 0.99,0.03,4,4,26.7018,26.9008,-0.1990,0.06,0.00,1.00,1.93,2.07,0.14, 
+183_15,Hs04083572_cn,RNASA P,,1.20,1,> 0.99,2.33,4,4,27.0530,26.5180,0.5350,0.05,0.74,0.60,1.14,1.23,0.10, 
+183_22,Hs04083572_cn,RNASA P,,1.84,2,> 0.99,0.88,4,4,23.8252,23.9043,-0.0790,0.04,0.12,0.92,1.78,1.91,0.13, 
+18_16,Hs04083572_cn,RNASA P,,1.73,2,> 0.99,0.77,4,4,31.3848,31.3750,0.0097,0.31,0.21,0.86,1.33,2.17,0.84, 
+1_15,Hs04083572_cn,RNASA P,,2.13,2,> 0.99,0.27,4,4,26.4545,26.7455,-0.2910,0.11,-0.09,1.06,1.94,2.28,0.34, 
+217_16,Hs04083572_cn,RNASA P,,2.04,2,> 0.99,0.10,4,4,26.6628,26.8898,-0.2270,0.01,-0.03,1.02,2.01,2.06,0.05, 
+218_18,Hs04083572_cn,RNASA P,,,,,,4,0,,,,,,,,,, 
+218_20,Hs04083572_cn,RNASA P,,1.89,2,> 0.99,0.34,4,4,26.1175,26.2403,-0.1227,0.01,0.08,0.95,1.88,1.90,0.03, 
+225_15,Hs04083572_cn,RNASA P,,1.92,2,> 0.99,0.23,4,4,26.2540,26.3985,-0.1445,0.08,0.06,0.96,1.77,2.00,0.23, 
+23_18,Hs04083572_cn,RNASA P,,2.10,2,> 0.99,0.41,4,4,25.4045,25.6733,-0.2687,0.07,-0.07,1.05,1.99,2.18,0.19, 
+242_14,Hs04083572_cn,RNASA P,,2.02,2,> 0.99,0.05,4,4,26.2435,26.4578,-0.2143,0.08,-0.01,1.01,1.90,2.14,0.24, 
+283_22,Hs04083572_cn,RNASA P,,2.92,3,> 0.99,0.10,4,4,24.7338,25.4797,-0.7460,0.04,-0.54,1.46,2.81,3.01,0.20, 
+297_14,Hs04083572_cn,RNASA P,,2.04,2,> 0.99,0.14,4,4,26.0282,26.2562,-0.2280,0.06,-0.03,1.02,1.95,2.15,0.20, 
+324_21,Hs04083572_cn,RNASA P,,2.26,2,0.98,1.43,4,4,26.8930,27.2708,-0.3777,0.07,-0.18,1.13,2.14,2.37,0.22, 
+327_19,Hs04083572_cn,RNASA P,,1.93,2,> 0.99,0.13,4,4,27.8295,27.9768,-0.1472,0.07,0.05,0.96,1.82,2.03,0.20, 
+336_18,Hs04083572_cn,RNASA P,,2.01,2,0.99,0.90,4,4,26.4580,26.6640,-0.2060,0.25,-0.00,1.00,1.56,2.26,0.71, 
+351_21,Hs04083572_cn,RNASA P,,1.91,2,> 0.99,0.18,4,4,26.4010,26.5332,-0.1322,0.12,0.07,0.95,1.81,2.17,0.35, 
+375_22,Hs04083572_cn,RNASA P,,1.91,2,> 0.99,0.23,4,4,25.7560,25.8940,-0.1380,0.05,0.06,0.96,1.83,1.99,0.16, 
+379_20,Hs04083572_cn,RNASA P,,1.91,2,> 0.99,0.18,4,4,28.8728,29.0063,-0.1335,0.08,0.07,0.95,1.77,2.00,0.23, 
+383_17,Hs04083572_cn,RNASA P,,1.84,2,> 0.99,0.66,4,4,26.9760,27.0568,-0.0808,0.06,0.12,0.92,1.75,1.93,0.17, 
+38_18,Hs04083572_cn,RNASA P,,1.86,2,> 0.99,0.50,4,4,25.7165,25.8110,-0.0945,0.08,0.11,0.93,1.74,1.95,0.21, 
+C2N,Hs04083572_cn,RNASA P,,1.88,2,> 0.99,0.22,4,4,28.0415,28.1505,-0.1090,0.14,0.09,0.94,1.65,2.10,0.45, 
+C3N,Hs04083572_cn,RNASA P,,2.64,3,0.76,1.06,4,4,26.4068,27.0110,-0.6043,0.07,-0.40,1.32,2.48,2.76,0.28, 
+NTC,Hs04083572_cn,RNASA P,,,,,,1,0,,,,,,,,,, 
+
+
+
+File name: 230807_CNV_S_Results.txt
+Target name: Hs00010001_cn
+Reference name: RNASA P
+
+File Header:
+* Block Type = 384-Well Block
+* Calibration Background is expired  = No
+* Calibration Background performed on = 06-21-2023
+* Calibration Pure Dye FAM is expired = No
+* Calibration Pure Dye FAM performed on = 06-21-2023
+* Calibration Pure Dye ROX is expired = No
+* Calibration Pure Dye ROX performed on = 06-21-2023
+* Calibration Pure Dye SYBR is expired = No
+* Calibration Pure Dye SYBR performed on = 06-21-2023
+* Calibration Pure Dye TAMRA is expired = No
+* Calibration Pure Dye TAMRA performed on = 06-21-2023
+* Calibration Pure Dye VIC is expired = No
+* Calibration Pure Dye VIC performed on = 06-21-2023
+* Calibration ROI is expired  = No
+* Calibration ROI performed on = 06-21-2023
+* Calibration Uniformity is expired  = No
+* Calibration Uniformity performed on = 06-21-2023
+* Chemistry = TAQMAN
+* Date Created = 2023-08-08 09:42:18 AM CEST
+* Experiment Barcode = NA
+* Experiment Comment = NA
+* Experiment File Name = D:\CNVs SUICIDIO\230807_CNV_S_v2.eds
+* Experiment Name = 230807_CNV_S
+* Experiment Run End Time = 2023-08-07 23:54:22 PM CEST
+* Experiment Type = Comparative Cт (ΔΔCт) 
+* Instrument Name =       272533331
+* Instrument Serial Number = 272533331
+* Instrument Type = QuantStudio™ 5 System
+* Passive Reference = ROX
+* Post-read Stage/Step = 
+* Pre-read Stage/Step = 
+* Quantification Cycle Method = Ct
+* Signal Smoothing On = true
+* Stage/ Cycle where Ct Analysis is performed = Stage2, Step2
+* User Name = NA
+
+Analysis Parameters:
+VIC Ct detection threshold: 32.0
+Calibrator sample copy number: 2
+
+Total number of samples: 32
+- Negative control: 1
+- Undetermined: 1
+- 1 Copy: 2
+- 2 Copies: 26
+- 3 Copies: 2
+
+Total number of wells omitted from analysis: 7
+- VIC Ct exceeded the specified detection threshold (32.0): 5
+- Outlier determined by the software: 1
+- Negative control sample well: 1
+
+Delta Ct variance: 0.1076
+
+Sample Name,Target,Reference,Plate ID,CN Calculated,CN Predicted,Confidence,|Z-Score|,Replicate Count,Replicates Analyzed,FAM Ct Mean,VIC Ct Mean,Delta Ct Mean,Delta Ct SD,Delta Delta Ct,RQ,Min CN,Max CN,CN Range,Sample Comments
+110_14,Hs00010001_cn,RNASA P,,1.92,2,> 0.99,0.46,4,4,26.2158,26.0670,0.1487,0.07,0.06,0.96,1.83,2.05,0.21, 
+1116_15,Hs00010001_cn,RNASA P,,1.85,2,> 0.99,0.93,4,4,26.7890,26.5855,0.2035,0.05,0.11,0.92,1.77,1.90,0.13, 
+112_18,Hs00010001_cn,RNASA P,,1.90,2,> 0.99,0.48,4,4,27.7638,27.5995,0.1643,0.09,0.08,0.95,1.76,2.01,0.25, 
+115_22,Hs00010001_cn,RNASA P,,1.93,2,> 0.99,0.16,4,4,26.1950,26.0575,0.1375,0.13,0.05,0.97,1.73,2.14,0.41, 
+1166_14,Hs00010001_cn,RNASA P,,1.92,2,> 0.99,0.24,4,4,26.9832,26.8388,0.1445,0.07,0.06,0.96,1.84,2.05,0.21, 
+11_14,Hs00010001_cn,RNASA P,,2.30,2,0.99,1.12,4,4,26.1940,26.3075,-0.1135,0.05,-0.20,1.15,2.21,2.39,0.18, 
+129_19,Hs00010001_cn,RNASA P,,1.92,2,> 0.99,0.30,4,4,26.6115,26.4638,0.1477,0.09,0.06,0.96,1.81,2.06,0.25, 
+134_21,Hs00010001_cn,RNASA P,,1.18,1,> 0.99,1.42,4,4,27.3398,26.4930,0.8467,0.05,0.76,0.59,1.13,1.23,0.11, 
+137_22,Hs00010001_cn,RNASA P,,2.11,2,> 0.99,0.06,4,4,26.8788,26.8655,0.0132,0.08,-0.08,1.05,1.98,2.26,0.28, 
+183_15,Hs00010001_cn,RNASA P,,1.34,1,0.86,2.79,4,4,27.0830,26.4123,0.6708,0.03,0.58,0.67,1.30,1.36,0.06, 
+183_22,Hs00010001_cn,RNASA P,,2.04,2,> 0.99,0.02,4,4,25.4475,25.3850,0.0625,0.10,-0.03,1.02,1.87,2.16,0.29, 
+18_16,Hs00010001_cn,RNASA P,,2.00,2,> 0.99,0.05,4,3,31.3777,31.2883,0.0893,0.07,0.00,1.00,1.93,2.12,0.19, 
+1_15,Hs00010001_cn,RNASA P,,1.99,2,> 0.99,0.04,4,4,26.7688,26.6713,0.0975,0.07,0.01,0.99,1.85,2.07,0.22, 
+217_16,Hs00010001_cn,RNASA P,,2.18,2,> 0.99,0.43,4,4,26.8970,26.9340,-0.0370,0.06,-0.13,1.09,2.10,2.31,0.21, 
+218_18,Hs00010001_cn,RNASA P,,,,,,4,0,,,,,,,,,, 
+218_20,Hs00010001_cn,RNASA P,,1.98,2,> 0.99,0.06,4,4,26.3665,26.2645,0.1020,0.11,0.01,0.99,1.85,2.12,0.28, 
+225_15,Hs00010001_cn,RNASA P,,1.88,2,> 0.99,0.65,4,4,26.6188,26.4385,0.1803,0.07,0.09,0.94,1.81,2.00,0.19, 
+23_18,Hs00010001_cn,RNASA P,,2.06,2,> 0.99,0.01,4,4,25.7462,25.6975,0.0487,0.03,-0.04,1.03,2.02,2.10,0.08, 
+242_14,Hs00010001_cn,RNASA P,,1.87,2,> 0.99,0.65,4,4,26.7065,26.5215,0.1850,0.08,0.10,0.94,1.74,1.98,0.24, 
+283_22,Hs00010001_cn,RNASA P,,2.69,3,0.54,1.23,4,4,25.1128,25.4488,-0.3360,0.05,-0.43,1.34,2.58,2.80,0.22, 
+297_14,Hs00010001_cn,RNASA P,,1.88,2,> 0.99,0.67,4,4,26.4102,26.2335,0.1768,0.05,0.09,0.94,1.80,1.94,0.15, 
+324_21,Hs00010001_cn,RNASA P,,2.12,2,> 0.99,0.28,4,4,27.2803,27.2740,0.0063,0.05,-0.08,1.06,2.02,2.18,0.16, 
+327_19,Hs00010001_cn,RNASA P,,2.08,2,> 0.99,0.08,4,4,28.0248,27.9898,0.0350,0.06,-0.05,1.04,1.96,2.15,0.19, 
+336_18,Hs00010001_cn,RNASA P,,2.07,2,> 0.99,0.05,4,4,26.7688,26.7265,0.0422,0.05,-0.05,1.03,2.02,2.17,0.15, 
+351_21,Hs00010001_cn,RNASA P,,2.43,2,0.86,1.84,4,3,26.4230,26.6153,-0.1923,0.01,-0.28,1.22,2.41,2.46,0.05, 
+375_22,Hs00010001_cn,RNASA P,,2.03,2,> 0.99,0.03,4,4,25.9370,25.8712,0.0658,0.10,-0.02,1.02,1.89,2.21,0.32, 
+379_20,Hs00010001_cn,RNASA P,,2.41,2,0.86,1.56,4,4,28.8415,29.0208,-0.1793,0.14,-0.27,1.20,2.18,2.65,0.47, 
+383_17,Hs00010001_cn,RNASA P,,2.00,2,> 0.99,0.07,4,4,27.2062,27.1145,0.0918,0.02,0.00,1.00,1.97,2.03,0.06, 
+38_18,Hs00010001_cn,RNASA P,,2.00,2,> 0.99,0.03,4,4,25.9710,25.8820,0.0890,0.04,-0.00,1.00,1.95,2.06,0.11, 
+C2N,Hs00010001_cn,RNASA P,,2.06,2,> 0.99,0.04,4,4,28.3343,28.2888,0.0455,0.07,-0.04,1.03,1.96,2.18,0.21, 
+C3N,Hs00010001_cn,RNASA P,,2.99,3,0.98,0.03,4,4,26.6473,27.1395,-0.4923,0.12,-0.58,1.50,2.76,3.35,0.59, 
+NTC,Hs00010001_cn,RNASA P,,,,,,1,0,,,,,,,,,, 
+
+
+
+File name: 230807_CNV_S_Results.txt
+Target name: Hs04502391_cn
+Reference name: RNASA P
+
+File Header:
+* Block Type = 384-Well Block
+* Calibration Background is expired  = No
+* Calibration Background performed on = 06-21-2023
+* Calibration Pure Dye FAM is expired = No
+* Calibration Pure Dye FAM performed on = 06-21-2023
+* Calibration Pure Dye ROX is expired = No
+* Calibration Pure Dye ROX performed on = 06-21-2023
+* Calibration Pure Dye SYBR is expired = No
+* Calibration Pure Dye SYBR performed on = 06-21-2023
+* Calibration Pure Dye TAMRA is expired = No
+* Calibration Pure Dye TAMRA performed on = 06-21-2023
+* Calibration Pure Dye VIC is expired = No
+* Calibration Pure Dye VIC performed on = 06-21-2023
+* Calibration ROI is expired  = No
+* Calibration ROI performed on = 06-21-2023
+* Calibration Uniformity is expired  = No
+* Calibration Uniformity performed on = 06-21-2023
+* Chemistry = TAQMAN
+* Date Created = 2023-08-08 09:42:18 AM CEST
+* Experiment Barcode = NA
+* Experiment Comment = NA
+* Experiment File Name = D:\CNVs SUICIDIO\230807_CNV_S_v2.eds
+* Experiment Name = 230807_CNV_S
+* Experiment Run End Time = 2023-08-07 23:54:22 PM CEST
+* Experiment Type = Comparative Cт (ΔΔCт) 
+* Instrument Name =       272533331
+* Instrument Serial Number = 272533331
+* Instrument Type = QuantStudio™ 5 System
+* Passive Reference = ROX
+* Post-read Stage/Step = 
+* Pre-read Stage/Step = 
+* Quantification Cycle Method = Ct
+* Signal Smoothing On = true
+* Stage/ Cycle where Ct Analysis is performed = Stage2, Step2
+* User Name = NA
+
+Analysis Parameters:
+VIC Ct detection threshold: 32.0
+Calibrator sample copy number: 2
+
+Total number of samples: 32
+- Negative control: 1
+- Undetermined: 1
+- 1 Copy: 2
+- 2 Copies: 26
+- 3 Copies: 2
+
+Total number of wells omitted from analysis: 7
+- VIC Ct exceeded the specified detection threshold (32.0): 5
+- Outlier determined by the software: 1
+- Negative control sample well: 1
+
+Delta Ct variance: 0.0915
+
+Sample Name,Target,Reference,Plate ID,CN Calculated,CN Predicted,Confidence,|Z-Score|,Replicate Count,Replicates Analyzed,FAM Ct Mean,VIC Ct Mean,Delta Ct Mean,Delta Ct SD,Delta Delta Ct,RQ,Min CN,Max CN,CN Range,Sample Comments
+110_14,Hs04502391_cn,RNASA P,,1.97,2,> 0.99,0.11,4,4,25.9985,26.1230,-0.1245,0.07,0.02,0.98,1.84,2.07,0.23, 
+1116_15,Hs04502391_cn,RNASA P,,1.95,2,> 0.99,0.16,4,4,26.5300,26.6430,-0.1130,0.02,0.04,0.98,1.92,1.98,0.05, 
+112_18,Hs04502391_cn,RNASA P,,2.00,2,> 0.99,0.03,4,4,27.4893,27.6385,-0.1493,0.06,-0.00,1.00,1.92,2.10,0.19, 
+115_22,Hs04502391_cn,RNASA P,,1.96,2,> 0.99,0.05,4,4,25.9233,26.0457,-0.1225,0.15,0.03,0.98,1.79,2.20,0.41, 
+1166_14,Hs04502391_cn,RNASA P,,1.85,2,> 0.99,0.78,4,4,26.7645,26.8010,-0.0365,0.03,0.11,0.92,1.80,1.90,0.09, 
+11_14,Hs04502391_cn,RNASA P,,2.20,2,> 0.99,0.82,4,4,26.1020,26.3913,-0.2892,0.07,-0.14,1.10,2.11,2.34,0.23, 
+129_19,Hs04502391_cn,RNASA P,,2.00,2,> 0.99,0.03,4,4,26.3872,26.5373,-0.1500,0.10,-0.00,1.00,1.89,2.21,0.33, 
+134_21,Hs04502391_cn,RNASA P,,1.04,1,> 0.99,0.14,4,4,27.3570,26.5618,0.7953,0.12,0.94,0.52,0.96,1.12,0.17, 
+137_22,Hs04502391_cn,RNASA P,,2.01,2,> 0.99,0.03,4,3,26.6690,26.8237,-0.1547,0.09,-0.01,1.00,1.89,2.13,0.25, 
+183_15,Hs04502391_cn,RNASA P,,1.38,1,< 0.50,3.74,4,4,26.9095,26.5273,0.3823,0.05,0.53,0.69,1.31,1.41,0.10, 
+183_22,Hs04502391_cn,RNASA P,,1.98,2,> 0.99,0.03,4,4,25.4245,25.5590,-0.1345,0.05,0.01,0.99,1.90,2.04,0.14, 
+18_16,Hs04502391_cn,RNASA P,,2.10,2,> 0.99,0.15,4,3,31.7097,31.9307,-0.2210,0.37,-0.07,1.05,1.61,2.71,1.09, 
+1_15,Hs04502391_cn,RNASA P,,2.08,2,> 0.99,0.20,4,4,26.5788,26.7835,-0.2048,0.08,-0.06,1.04,1.95,2.20,0.25, 
+217_16,Hs04502391_cn,RNASA P,,2.04,2,> 0.99,0.04,4,4,26.7373,26.9177,-0.1805,0.16,-0.03,1.02,1.75,2.25,0.50, 
+218_18,Hs04502391_cn,RNASA P,,,,,,4,0,,,,,,,,,, 
+218_20,Hs04502391_cn,RNASA P,,1.93,2,> 0.99,0.08,4,4,26.2163,26.3178,-0.1015,0.08,0.05,0.97,1.85,2.10,0.26, 
+225_15,Hs04502391_cn,RNASA P,,1.85,2,> 0.99,0.76,4,4,26.4168,26.4510,-0.0343,0.08,0.11,0.92,1.76,1.98,0.23, 
+23_18,Hs04502391_cn,RNASA P,,2.08,2,> 0.99,0.13,4,4,25.5655,25.7685,-0.2030,0.16,-0.05,1.04,1.77,2.25,0.48, 
+242_14,Hs04502391_cn,RNASA P,,1.85,2,> 0.99,0.68,4,4,26.4620,26.4960,-0.0340,0.06,0.12,0.92,1.79,1.96,0.17, 
+283_22,Hs04502391_cn,RNASA P,,2.87,3,0.98,0.26,4,4,24.8390,25.5118,-0.6727,0.09,-0.52,1.44,2.71,3.11,0.40, 
+297_14,Hs04502391_cn,RNASA P,,1.87,2,> 0.99,0.47,4,4,26.1198,26.1755,-0.0558,0.08,0.09,0.94,1.73,1.97,0.23, 
+324_21,Hs04502391_cn,RNASA P,,2.15,2,> 0.99,0.63,4,4,27.0453,27.2990,-0.2537,0.04,-0.10,1.08,2.11,2.24,0.13, 
+327_19,Hs04502391_cn,RNASA P,,2.07,2,> 0.99,0.09,4,4,27.7855,27.9855,-0.2000,0.07,-0.05,1.04,1.97,2.19,0.22, 
+336_18,Hs04502391_cn,RNASA P,,2.12,2,> 0.99,0.30,4,4,26.4678,26.7015,-0.2337,0.11,-0.08,1.06,1.96,2.34,0.37, 
+351_21,Hs04502391_cn,RNASA P,,2.21,2,> 0.99,0.99,4,4,26.3425,26.6340,-0.2915,0.02,-0.14,1.10,2.18,2.24,0.07, 
+375_22,Hs04502391_cn,RNASA P,,1.93,2,> 0.99,0.20,4,4,25.8733,25.9675,-0.0943,0.07,0.05,0.96,1.86,2.06,0.20, 
+379_20,Hs04502391_cn,RNASA P,,2.08,2,> 0.99,0.09,4,4,28.8660,29.0685,-0.2025,0.07,-0.05,1.04,1.95,2.19,0.23, 
+383_17,Hs04502391_cn,RNASA P,,1.90,2,> 0.99,0.30,4,4,27.0728,27.1450,-0.0722,0.06,0.08,0.95,1.84,2.02,0.18, 
+38_18,Hs04502391_cn,RNASA P,,1.95,2,> 0.99,0.08,4,4,25.7940,25.9068,-0.1128,0.03,0.04,0.98,1.91,1.98,0.08, 
+C2N,Hs04502391_cn,RNASA P,,2.00,2,> 0.99,0.04,4,4,28.1253,28.2745,-0.1492,0.12,0.00,1.00,1.82,2.14,0.32, 
+C3N,Hs04502391_cn,RNASA P,,2.84,3,0.97,0.22,4,4,26.4363,27.0913,-0.6550,0.10,-0.51,1.42,2.61,3.09,0.49, 
+NTC,Hs04502391_cn,RNASA P,,,,,,1,0,,,,,,,,,, 
+
+
+

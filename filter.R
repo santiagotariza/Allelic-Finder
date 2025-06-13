@@ -11,7 +11,8 @@ if (!dir.exists(output_processed_dir)) {
 }
 
 # --- Cargar el archivo cnvs.csv ---
-cnvs_db <- read.csv(cnvs_file, stringsAsFactors = FALSE)
+# Usar check.names = FALSE para asegurar que los nombres de las columnas 'HsXXXX_cn' se mantengan intactos
+cnvs_db <- read.csv(cnvs_file, stringsAsFactors = FALSE, check.names = FALSE)
 
 # Renombrar la primera columna de cnvs_db para facilitar la comparación
 names(cnvs_db)[1] <- "Sample_ID"
@@ -28,69 +29,89 @@ for (file_path in output_files) {
   # Leer el archivo de coincidencias
   matches_df <- read.csv(file_path, stringsAsFactors = FALSE)
   
-  # --- Paso 1: Clasificar filas según si su Sample_ID existe en cnvs.csv ---
-  # Filas cuyo Sample_ID NO está en cnvs.csv (estas se conservan tal cual)
-  rows_not_in_cnvs <- matches_df %>%
-    anti_join(cnvs_db, by = "Sample_ID")
+  # Columnas 'Hs' a considerar en matches_df
+  hs_cols_to_check <- grep("^Hs\\d+_cn$", names(matches_df), value = TRUE)
   
-  # Filas cuyo Sample_ID SÍ está en cnvs.csv (a estas se les aplica el filtro)
-  rows_in_cnvs <- matches_df %>%
-    semi_join(cnvs_db, by = "Sample_ID")
-  
-  cat("  Filas con 'Sample_ID' no encontrado en cnvs.csv (se conservan):", nrow(rows_not_in_cnvs), "\n")
-  cat("  Filas con 'Sample_ID' encontrado en cnvs.csv (se filtrarán):", nrow(rows_in_cnvs), "\n")
-  
-  # --- Paso 2: Aplicar el filtro a las filas que SÍ están en cnvs.csv ---
-  final_filtered_rows_in_cnvs <- data.frame()
-  
-  if (nrow(rows_in_cnvs) > 0) {
-    for (i in 1:nrow(rows_in_cnvs)) {
-      current_row <- rows_in_cnvs[i, ]
-      sample_id_to_check <- current_row$Sample_ID
-      
-      cnv_row <- cnvs_db %>%
-        filter(Sample_ID == sample_id_to_check)
-      
-      if (nrow(cnv_row) > 1) {
-        cat("  Advertencia: Múltiples entradas para Sample_ID", sample_id_to_check, "en cnvs.csv. Usando la primera.\n")
-        cnv_row <- cnv_row[1, ]
-      }
-      
-      cnv_reference_value <- cnv_row[[3]]
-      
-      val_col4 <- current_row[[4]]
-      val_col5 <- current_row[[5]]
-      val_col6 <- current_row[[6]]
-      
-      # --- Lógica de filtrado: mantener si alguna es NA o si alguna coincide con referencia ---
-      is_na_in_any_col <- is.na(val_col4) || is.na(val_col5) || is.na(val_col6)
-      
-      matches_reference <- FALSE
-      if (!is.na(val_col4) && val_col4 == cnv_reference_value) matches_reference <- TRUE
-      if (!is.na(val_col5) && val_col5 == cnv_reference_value) matches_reference <- TRUE
-      if (!is.na(val_col6) && val_col6 == cnv_reference_value) matches_reference <- TRUE
-      
-      if (is_na_in_any_col || matches_reference) {
-        final_filtered_rows_in_cnvs <- bind_rows(final_filtered_rows_in_cnvs, current_row)
-      }
-    }
-    cat("  Filas de 'Sample_ID's encontrados en cnvs.csv que cumplen el filtro:", nrow(final_filtered_rows_in_cnvs), "\n")
-  } else {
-    cat("  No hay filas con 'Sample_ID's encontrados en cnvs.csv para filtrar.\n")
+  # Verificar si se encontraron columnas Hs válidas
+  if (length(hs_cols_to_check) == 0) {
+    cat("  Advertencia: No se encontraron columnas 'HsXXXX_cn' en", basename(file_path), ". Saltando este archivo.\n")
+    next
   }
   
+  # Dataframe para almacenar las filas que pasan el filtro
+  filtered_matches_df <- data.frame()
   
-  # --- Paso 3: Combinar las filas que se conservan de ambos grupos ---
-  # Combinar las filas que no estaban en cnvs.csv con las filas que sí estaban y pasaron el filtro.
-  final_result_df <- bind_rows(rows_not_in_cnvs, final_filtered_rows_in_cnvs)
+  # Iterar sobre cada fila de matches_df
+  for (i in 1:nrow(matches_df)) {
+    current_row <- matches_df[i, ]
+    sample_id_to_check <- current_row$Sample_ID
+    
+    # Extraer los valores de las columnas 'Hs' de la fila actual
+    values_from_matches <- as.numeric(current_row[hs_cols_to_check]) # Asegurarse que son numéricos
+    
+    # --- Lógica de filtrado ---
+    # Paso 1: Verificar si alguna de las columnas 'Hs' es NA en matches_df
+    if (any(is.na(values_from_matches))) {
+      # Si hay algún NA, la fila se conserva tal cual
+      filtered_matches_df <- bind_rows(filtered_matches_df, current_row)
+      next # Pasar a la siguiente fila
+    }
+    
+    # Paso 2: Si no hay NAs, buscar el Sample_ID en cnvs_db
+    cnv_row_reference <- cnvs_db %>%
+      filter(Sample_ID == sample_id_to_check)
+    
+    # Si el Sample_ID no se encuentra en cnvs_db, la fila se conserva (similar a anti_join)
+    if (nrow(cnv_row_reference) == 0) {
+      filtered_matches_df <- bind_rows(filtered_matches_df, current_row)
+      next # Pasar a la siguiente fila
+    }
+    
+    # Si se encuentra, asegurar que solo hay una fila de referencia
+    if (nrow(cnv_row_reference) > 1) {
+      cat("  Advertencia: Múltiples entradas para Sample_ID", sample_id_to_check, "en cnvs.csv. Usando la primera.\n")
+      cnv_row_reference <- cnv_row_reference[1, ]
+    }
+    
+    # Obtener los valores de referencia de cnvs_db para las mismas columnas Hs
+    # Debemos asegurarnos de que las columnas Hs de cnvs_db también existen y tienen el mismo nombre
+    common_hs_cols <- intersect(hs_cols_to_check, names(cnv_row_reference))
+    
+    if (length(common_hs_cols) == 0) {
+      cat("  Advertencia: No se encontraron columnas 'HsXXXX_cn' coincidentes entre matches_df y cnvs.csv para Sample_ID", sample_id_to_check, ". Fila conservada por precaución.\n")
+      filtered_matches_df <- bind_rows(filtered_matches_df, current_row)
+      next
+    }
+    
+    # Verificar si TODOS los valores de 'matches_df' coinciden con sus homólogos en 'cnvs_db'
+    all_match <- TRUE # Asumimos que todos coinciden hasta que se demuestre lo contrario
+    for (j in 1:length(common_hs_cols)) {
+      col_name <- common_hs_cols[j]
+      val_matches <- current_row[[col_name]]
+      val_cnvs <- cnv_row_reference[[col_name]]
+      
+      # Si hay NA en cualquiera de los valores (aunque ya filtramos NAs de matches_df,
+      # podría haber en cnvs_db, o un tipo de dato diferente), o si no coinciden,
+      # entonces 'all_match' es FALSE y podemos salir del bucle.
+      if (is.na(val_matches) || is.na(val_cnvs) || val_matches != val_cnvs) {
+        all_match <- FALSE
+        break
+      }
+    }
+    
+    if (all_match) {
+      # Si todas las columnas 'Hs' coinciden, la fila se conserva
+      filtered_matches_df <- bind_rows(filtered_matches_df, current_row)
+    }
+  }
   
   # --- Guardar el archivo procesado si hay resultados ---
-  if (nrow(final_result_df) > 0) {
+  if (nrow(filtered_matches_df) > 0) {
     output_file_name <- basename(file_path)
     output_file_name_filtered <- paste0(tools::file_path_sans_ext(output_file_name), "_filtered.csv")
     
-    write.csv(final_result_df, file.path(output_processed_dir, output_file_name_filtered), row.names = FALSE)
-    cat("  Archivo procesado generado:", output_file_name_filtered, "con", nrow(final_result_df), "filas totales.\n")
+    write.csv(filtered_matches_df, file.path(output_processed_dir, output_file_name_filtered), row.names = FALSE)
+    cat("  Archivo procesado generado:", output_file_name_filtered, "con", nrow(filtered_matches_df), "filas totales.\n")
   } else {
     cat("  No se encontraron filas que cumplan los criterios de filtrado para", basename(file_path), "\n")
   }

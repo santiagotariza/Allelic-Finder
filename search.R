@@ -40,8 +40,8 @@ for (sample_file in sample_files) {
   sample_name <- tools::file_path_sans_ext(basename(sample_file))
   
   # Identificar los rsIDs comunes
-  sample_rsIDs <- names(sample)[-1]     # Columnas después de la primera en samples
-  db_rsIDs <- names(db)[-c(1:5)]        # Columnas después de la quinta en db
+  sample_rsIDs <- names(sample)[-1]       # Columnas después de la primera en samples
+  db_rsIDs <- names(db)[-c(1:5)]          # Columnas después de la quinta en db
   common_rsIDs <- intersect(sample_rsIDs, db_rsIDs)
   
   # Crear un marco de datos para almacenar los resultados
@@ -87,8 +87,7 @@ for (sample_file in sample_files) {
       if (non_na_db_rsIDs_to_match > 0 && actual_matches_count == non_na_db_rsIDs_to_match) {
         matches <- bind_rows(matches, data.frame(
           Sample_ID = sample[i, 1],
-          db[j, c("Gene", "Genotype", "CYP2D6_INT2_Hs04083572_cn", 
-                  "CYP2D6_INT6_Hs04502391_cn", "CYP2D6_ex9_Hs00010001_cn")],
+          db[j, 1:5], # <-- CAMBIO A SELECCIÓN POR ÍNDICE
           rsIDs_matched = paste(matched_rsIDs_for_this_comparison, collapse = ", "),
           stringsAsFactors = FALSE
         ))
